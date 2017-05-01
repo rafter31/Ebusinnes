@@ -1,0 +1,36 @@
+<br><br>
+<h2>Koszyk</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                Nazwa
+            </th>
+            <th>
+                Ilość
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>Akcje</th>
+        </tr>
+
+        
+            <tr *ngFor="let cartItem of cart" >
+                <td class="prod_name">
+                   {{cartItem.Name}}
+                </td>
+                <td>
+                     {{cartItem.Quantity}}
+                </td>
+                <td>
+                    {{cartItem.GrossAmount}} zł
+                </td>
+                <td>
+                    <span (click)="removeCartItem(cartItem.id)" class="glyphicon glyphicon-remove"  style="cursor: pointer"></span>
+                </td>
+            </tr>
+        
+
+    </table>
+    <button id="PayBtn"type="button" class="btn btn-default" (click)="RealizeOrders()">Zapłać</button>

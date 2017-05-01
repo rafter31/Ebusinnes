@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <li *ngFor="let category of categories" class="list-group-item justify-content-between">
+    <a [routerLink]="['/categories', category.id]" routerLinkActive="alert-warning">
+      {{category.name}}
+    </a>
+  </li>
+</ul>

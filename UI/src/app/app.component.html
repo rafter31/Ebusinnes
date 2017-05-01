@@ -1,0 +1,66 @@
+<div>
+  <!--Navbar-->
+  <nav class="navbar navbar-toggleable-md fixed-top navbar-dark black darken-4">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1"
+              aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <strong>{{title}}</strong>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav1">
+        <ul class="navbar-nav mr-auto">
+         
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink="/product" [queryParams]="{ category: '1' }" >Produkty</a>
+          </li>
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">Kategorie</a>
+            <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+              <span *ngFor="let cat of categories">
+                <a class="dropdown-item" routerLink="/product"[queryParams]="{ category: cat.id }" >{{cat.name}}</a>
+              </span>
+            </div>
+          </li>
+
+
+
+          <li class="nav-item dropdown btn-group">
+            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">{{UserNameCookie}}</a>
+            <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item"  (click)="LogAction(LogInText)">{{LogInText}}</a>
+                <a class="dropdown-item" routerLink="/cart" >Koszyk</a>
+            </div>
+          </li>
+
+
+
+
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container" style="min-height: 590px">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!--Footer-->
+  <footer class="page-footer bottom  black darken-4 center">
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        <a href="#"> </a>
+      </div>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+</div>
+

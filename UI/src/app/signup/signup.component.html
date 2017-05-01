@@ -1,0 +1,87 @@
+<div class="row">
+  <br/><br/>
+</div>
+
+<div class="row">
+
+  <div class="col-12 col-lg-6">
+    <!--Form with header-->
+    <div class="card">
+      <div class="card-block">
+
+        <!--Header-->
+        <div class="form-header brown darken-4">
+          <h3><i class="fa fa-lock"></i> Rejestracja</h3>
+        </div>
+        <!--Body-->
+        <p>Jeśli nie posiadasz już konto użytkownika w naszym sklepie, możesz je założyć.</p>
+        <br/>
+
+        <div class="md-form">
+          <i class="fa prefix"></i>
+          <input [(ngModel)]="user.firstName" type="text" id="firstName" class="form-control">
+          <label for="firstName">Imię</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa  prefix"></i>
+          <input [(ngModel)]="user.lastName" type="text" id="lastName" class="form-control">
+          <label for="lastName">Nazwisko</label>
+        </div>
+
+        <!--Email validation-->
+        <div class="md-form">
+          <i class="fa fa-envelope prefix"></i>
+          <input [(ngModel)]="user.email" type="email" id="new-email" class="form-control validate">
+          <label for="new-email" data-error="zły format" data-success="right">Podaj email</label>
+        </div>
+        <!--Password validation-->
+        <div class="md-form">
+          <i class="fa fa-lock prefix"></i>
+          <input [(ngModel)]="user.password" type="password" id="new-pass" class="form-control validate">
+          <label for="new-pass" data-error="zły format" data-success="right">Podaj hasło</label>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="signUp()">Zarejestruj</button>
+        </div>
+        <br/>
+      </div>
+    </div>
+    <!--/Form with header-->
+
+
+  </div>
+  <div class="col-12 col-lg-6">
+    <!--Form with header-->
+    <div class="card">
+      <div class="card-block">
+
+        <!--Header-->
+        <div class="form-header brown darken-4">
+          <h3><i class="fa fa-lock"></i> Logowanie</h3>
+        </div>
+        <!--Body-->
+        <p>Jeśli posiadasz już konto użytkownika w naszym sklepie, podaj dane logowania.</p>
+        <br/>
+        <div class="md-form">
+          <i class="fa fa-envelope prefix"></i>
+          <input [(ngModel)]="login.email" type="text" id="email" class="form-control">
+          <label for="email">Podaj email</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-lock prefix"></i>
+          <input [(ngModel)]="login.password" type="password" id="pass" class="form-control">
+          <label for="pass">Podaj hasło</label>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="signIn()">Zaloguj</button>
+        </div>
+        <br/>
+      </div>
+    </div>
+    <!--/Form with header-->
+  </div>
+</div>

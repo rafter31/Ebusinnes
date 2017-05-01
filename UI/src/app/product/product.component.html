@@ -1,0 +1,50 @@
+<br><br><br>
+
+<div class="col-md-3">
+                <p class="lead">Kategorie</p>
+                <div class="list-group">
+                  
+                    
+                        <p *ngFor="let category of categories" class="list-group-item"  style="cursor: pointer" [routerLink]="['/product']"  [queryParams]="{ category: category.id }"  [queryParams]="{ category: CAT1 }">
+                            {{category.name}}
+                        </p>
+                      
+                    
+                </div>
+                
+            </div>
+
+
+<div class="col-md-9">
+    <div class="row">
+            <div *ngFor="let product of products" style="height: 360px;cursor: pointer"  class="col-sm-4 col-lg-4 col-md-4" >
+                <div class="thumbnail"  [routerLink]="['/productsDetails']"  [queryParams]="{ id: product.id }">
+                    <img class="prod_image" src="/assets/products/{{product.imageUrl}}"  width="300" height="130"/>
+                    <div class="caption">
+                        <h4 class="pull-right" [routerLink]="['/productsDetails']"  [queryParams]="{ id: product.id }" >{{product.name}}</h4>
+                        <h4>
+                            <p>{{product.price}}</p>
+                        </h4>
+
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">31 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+
+</div>
+
+
+        
+   
+</div>
+

@@ -1,0 +1,50 @@
+<br><br><br>
+<div>
+  
+
+
+    <h2>{{productName}}</h2>
+    <hr />
+    <div class="col-sm-4">
+         <img class="prod_image" src="/assets/products/{{productImage}}"  width="500" />
+    </div>
+    
+    <dl class="dl-horizontal col-sm-4">
+        
+        <dt>
+           Opis:
+        </dt>
+
+        <dd>
+          {{productDesc}}
+        </dd>
+    </dl>
+    <dl class="dl-horizontal col-sm-4">
+        <dt>
+         Cena:
+        </dt>
+
+        <dd>
+           {{productPrice}} zł
+        </dd>
+        <dt>
+            Ilość:
+        </dt>
+        <dd>
+            <div class="form-group">
+           
+            <input type="number" class="form-control" id="quantityTb"  [(ngModel)]="quantity"  width="100">
+            </div>
+        </dd>
+
+
+        <br />
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-10">
+                    <input (click)="addToCart()" id="AddToCartBtn" type="submit" value="Dodaj do koszyka" class="btn btn-default" />
+                   
+                </div>
+            </div>
+
+    </dl>
+</div>
